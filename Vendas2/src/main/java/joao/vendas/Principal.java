@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Principal {
 
     public static void main(String[] args) {
-        SpringApplication.run(VendaApplication.class, args);
+        SpringApplication.run(Principal.class, args);
     }
 
 }
