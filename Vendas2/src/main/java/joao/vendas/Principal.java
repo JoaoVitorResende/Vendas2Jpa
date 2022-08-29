@@ -22,6 +22,7 @@ public class Principal {
 
             List<Cliente> todosClientes = clienterposi.ObjterTodosOsClientes();
             todosClientes.forEach(System.out::println);
+
         };
     }
     public static void main(String[] args) {
