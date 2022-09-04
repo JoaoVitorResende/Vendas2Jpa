@@ -14,15 +14,14 @@ import java.util.List;
 public class Principal {
 
     @Bean
-    public CommandLineRunner init(@Autowired ClienteReposi clienterposi){
+    public CommandLineRunner init(@Autowired ClienteReposi clientereposi){
         return args -> {
-            Cliente cliente = new Cliente();
-            cliente.setNome("João");
-            clienterposi.SalvarCliente(cliente);
+            System.out.println("Salvando clientes");
+            clientereposi.save(new Cliente("Joao"));
+            clientereposi.save(new Cliente("Outro Cliente"));
 
-            List<Cliente> todosClientes = clienterposi.ObjterTodosOsClientes();
-            todosClientes.forEach(System.out::println);
-
+            boolean exists = clientereposi.existsByNome("Joao");
+            System.out.println(exists);
         };
     }
     public static void main(String[] args) {
